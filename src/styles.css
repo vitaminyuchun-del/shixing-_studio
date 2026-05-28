@@ -157,6 +157,7 @@ button {
 
 .hero-copy .kicker,
 .hero-copy h1,
+.hero-copy .hero-subtitle,
 .hero-copy .hero-lede,
 .hero-copy .hero-actions {
   animation: heroTextIn 900ms var(--ease) both;
@@ -166,12 +167,16 @@ button {
   animation-delay: 90ms;
 }
 
-.hero-copy .hero-lede {
+.hero-copy .hero-subtitle {
   animation-delay: 180ms;
 }
 
-.hero-copy .hero-actions {
+.hero-copy .hero-lede {
   animation-delay: 270ms;
+}
+
+.hero-copy .hero-actions {
+  animation-delay: 360ms;
 }
 
 .hero-reel {
@@ -220,7 +225,7 @@ p {
 }
 
 h1 {
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   color: var(--off-white);
   font-size: clamp(44px, 6vw, 92px);
   line-height: 1.08;
@@ -246,6 +251,16 @@ h3 {
   color: var(--muted);
   font-size: clamp(16px, 1.45vw, 20px);
   line-height: 1.8;
+}
+
+.hero-subtitle {
+  max-width: 620px;
+  margin-bottom: 26px;
+  color: rgba(245, 246, 246, 0.84);
+  font-size: clamp(15px, 1.55vw, 21px);
+  font-weight: 700;
+  line-height: 1.55;
+  text-transform: uppercase;
 }
 
 .hero-actions {
@@ -886,6 +901,29 @@ h3 {
   line-height: 1.7;
 }
 
+.project-capability {
+  margin: 18px 0 18px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(245, 246, 246, 0.14);
+  border-bottom: 1px solid rgba(245, 246, 246, 0.14);
+}
+
+.project-capability span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--vermilion);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.project-capability p {
+  margin: 0;
+  color: rgba(245, 246, 246, 0.84);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .project-role {
   margin-bottom: 12px;
   color: var(--vermilion);
@@ -1050,6 +1088,55 @@ h3 {
 
 .contact-card p {
   color: rgba(247, 246, 242, 0.72);
+  white-space: pre-line;
+}
+
+.contact-process {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.26fr) minmax(0, 0.74fr);
+  gap: clamp(24px, 5vw, 72px);
+  margin-top: 42px;
+  padding-top: 34px;
+  border-top: 1px solid var(--light-line);
+}
+
+.contact-process h3 {
+  margin: 0;
+  color: var(--vermilion);
+  font-size: 15px;
+  letter-spacing: 0.14em;
+}
+
+.contact-process ol {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: contact-flow;
+  background: var(--light-line);
+  border: 1px solid var(--light-line);
+}
+
+.contact-process li {
+  position: relative;
+  min-height: 56px;
+  padding: 18px 22px 18px 62px;
+  background: var(--deep-gray);
+  color: rgba(247, 246, 242, 0.78);
+  line-height: 1.5;
+  counter-increment: contact-flow;
+}
+
+.contact-process li::before {
+  content: counter(contact-flow, decimal-leading-zero);
+  position: absolute;
+  left: 22px;
+  top: 19px;
+  color: var(--vermilion);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
 }
 
 .contact-links {
@@ -1291,6 +1378,10 @@ h3 {
   .project-info,
   .capability-item {
     padding: 22px;
+  }
+
+  .contact-process {
+    grid-template-columns: 1fr;
   }
 
   .project-card.is-featured-project h3 {

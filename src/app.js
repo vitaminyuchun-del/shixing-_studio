@@ -15,6 +15,69 @@ const projectClassOrder = new Map([
   ["", 7],
 ]);
 
+const projectCapabilityNotes = {
+  zh: {
+    A: {
+      label: "商业影像后期支持",
+      body: "提供实拍合成、包装动画、画面修补与成片质感统一等支持。",
+    },
+    GamePV: {
+      label: "动画包装案例",
+      body: "为游戏PV和商业内容提供标题动画、图形动效与视觉风格包装。",
+    },
+    ThreeD: {
+      label: "三维辅助与视觉设计",
+      body: "以三维素材、科技视觉和画面设计补充商业影像表达。",
+    },
+    Support: {
+      label: "大厂项目链路支持",
+      body: "在公开项目链路中提供部分镜头包装、实拍合成、画面修补或视觉后期支持。",
+    },
+    AIGC: {
+      label: "AIGC视觉实验",
+      body: "针对AI生成素材进行画面质感优化、镜头统一与成片化测试。",
+    },
+    B: {
+      label: "导演型影像实验",
+      body: "围绕短片概念、AI素材整合与合成测试，探索导演型样片表达。",
+    },
+    default: {
+      label: "合作支持",
+      body: "可按镜头、阶段或整片方式提供灵活的商业影像视觉支持。",
+    },
+  },
+  en: {
+    A: {
+      label: "Commercial Image Post Support",
+      body: "Supports live-action compositing, motion packaging, cleanup, and finishing-quality unification.",
+    },
+    GamePV: {
+      label: "Motion Packaging Case",
+      body: "Provides title animation, graphic motion, and visual-style packaging for game PVs and commercial content.",
+    },
+    ThreeD: {
+      label: "3D Support & Visual Design",
+      body: "Uses 3D assets, technology visuals, and image design to support commercial image expression.",
+    },
+    Support: {
+      label: "Major Client Pipeline Support",
+      body: "Supports selected shots with packaging, live-action compositing, image cleanup, or visual post-production.",
+    },
+    AIGC: {
+      label: "AIGC Visual Experiment",
+      body: "Tests AI-generated material through image-quality enhancement, shot continuity, and delivery-oriented finishing.",
+    },
+    B: {
+      label: "Director-led Image Experiment",
+      body: "Explores director-led sample-film expression through short-film concepts, AI asset integration, and compositing tests.",
+    },
+    default: {
+      label: "Collaboration Support",
+      body: "Flexible commercial image support by shot, phase, or full-film scope.",
+    },
+  },
+};
+
 let revealObserver = null;
 
 const i18n = {
@@ -23,14 +86,15 @@ const i18n = {
     hero: {
       kicker: "TYC / 十行文化",
       title: "商业影像合成与 AIGC 视觉增强设计师",
-      lede: "Motion Compositing / AIGC Visual Enhancement / Director-oriented Creator",
+      subtitle: "Motion Compositing / AIGC Visual Enhancement / Director-oriented Creator",
+      lede: "为广告片、游戏PV、品牌影像与AI短片提供画面合成、瑕疵修复、动画包装、AIGC画面优化与成片质感统一。",
       ctaPrimary: "联系合作",
       ctaSecondary: "查看项目",
       reelLabel: "Featured Motion Reel",
     },
     motion: {
       title: "核心能力",
-      body: "围绕商业影像合成、动画包装与 AIGC 视觉增强，集中展示可直接服务商业成片的后期执行与视觉整合能力。",
+      body: "面向商业影像、品牌内容与AIGC影像实验，提供以下三类视觉支持。",
     },
     work: {
       title: "精选项目",
@@ -49,11 +113,17 @@ const i18n = {
     },
     about: {
       title: "关于十行文化",
-      body: "我是一名商业影像合成与动画包装设计师，曾在湖南广电体系工作，后参与视觉内容公司合伙经营，目前以一人公司形式承接项目。长期为上海视觉/内容制作公司提供动画包装、实拍合成与商业成片支持，并参与腾讯、米哈游等大厂相关项目链路。\n\n目前重点探索 AIGC 工具在实拍合成、商业影像增强和导演型短片中的应用。",
+      body: "我是一名商业影像合成与动画包装设计师，目前以一人公司“十行文化”的形式承接项目。\n\n相比大型团队，十行文化更适合需要灵活协作、快速测试、远程执行和阶段性视觉支持的项目。我的工作重点不是单纯生成画面，而是把素材、实拍、动画与AIGC画面整合到可交付的商业成片质感中。不仅提供后期执行，也能参与前期视觉方向、镜头气质测试与AI概念样片开发。\n\n过往经历包括湖南广电体系工作、视觉内容公司合伙经营，以及长期服务上海视觉/内容制作公司，参与腾讯、米哈游等相关项目链路。",
     },
     contact: {
       title: "联系合作",
-      body: "可合作方向：实拍合成、商业影像后期、动画包装、品牌视频、AIGC视觉增强、AI生成素材修复与成片质感统一。\n\n适合品牌短片、产品概念片、内容包装、发布会视觉、AIGC影像实验及远程项目制合作。",
+      body: "可合作方向：实拍合成、商业影像后期、动画包装、品牌视频、AIGC视觉增强、AI生成素材修复与成片质感统一。\n\n适合品牌短片、产品概念片、内容包装、发布会视觉与AIGC影像实验。适合远程项目制合作，可按镜头、阶段或整片支持方式协作。",
+      flowTitle: "合作流程",
+      flow1: "沟通项目需求与素材情况",
+      flow2: "判断视觉方向、工作量与交付标准",
+      flow3: "提供报价与制作周期",
+      flow4: "制作测试或阶段性画面",
+      flow5: "修改、统一并交付最终文件",
     },
   },
   en: {
@@ -61,14 +131,15 @@ const i18n = {
     hero: {
       kicker: "TYC / Shixing Studio",
       title: "Commercial Compositing & AIGC Visual Enhancement Designer",
-      lede: "Motion Compositing / AIGC Visual Enhancement / Director-oriented Creator",
+      subtitle: "Motion Compositing / AIGC Visual Enhancement / Director-oriented Creator",
+      lede: "Image compositing, cleanup, motion packaging, AIGC image enhancement, and finishing-quality unification for commercials, game PVs, brand films, and AI short films.",
       ctaPrimary: "Start a Collaboration",
       ctaSecondary: "View Work",
       reelLabel: "Featured Motion Reel",
     },
     motion: {
       title: "Core Capabilities",
-      body: "Focused on commercial compositing, motion packaging, and AIGC visual enhancement for delivery-ready image work.",
+      body: "Three focused visual-support services for commercial images, brand content, and AIGC image experiments.",
     },
     work: {
       title: "Selected Projects",
@@ -87,11 +158,17 @@ const i18n = {
     },
     about: {
       title: "About Shixing Studio",
-      body: "I am a commercial image compositing and motion packaging designer. I previously worked within the Hunan Broadcasting System, later participated in the partnership operation of a visual content company, and now take on projects through a one-person company. I have long supported Shanghai visual and content production companies with motion packaging, live-action compositing, and commercial finishing, while participating in project pipelines connected to Tencent, miHoYo, and other major clients.\n\nI am currently focused on applying AIGC tools to live-action compositing, commercial image enhancement, and director-led short films.",
+      body: "I am a commercial image compositing and motion packaging designer, currently taking on projects through my one-person company, Shixing Studio.\n\nCompared with a large team, Shixing Studio is better suited for projects that need flexible collaboration, quick visual tests, remote execution, and phase-based visual support. My focus is not simply generating images, but integrating assets, live-action footage, animation, and AIGC visuals into deliverable commercial finishing quality. Beyond post-production execution, I can also participate in early visual direction, shot-tone testing, and AI concept sample development.\n\nMy background includes work within the Hunan Broadcasting System, partnership operation in a visual content company, long-term support for Shanghai visual/content production companies, and project pipelines connected to Tencent, miHoYo, and related clients.",
     },
     contact: {
       title: "Contact",
-      body: "Collaboration areas: live-action compositing, commercial image post-production, motion packaging, brand videos, AIGC visual enhancement, AI-generated material repair, and finishing-quality unification.\n\nSuitable for brand films, product concept films, content packaging, launch-event visuals, AIGC image experiments, and remote project-based collaboration.",
+      body: "Collaboration areas: live-action compositing, commercial image post-production, motion packaging, brand videos, AIGC visual enhancement, AI-generated material repair, and finishing-quality unification.\n\nSuitable for brand films, product concept films, content packaging, launch-event visuals, and AIGC image experiments. Remote project-based collaboration is welcome, with support by shot, phase, or full-film scope.",
+      flowTitle: "Workflow",
+      flow1: "Discuss project needs and source material",
+      flow2: "Assess visual direction, workload, and delivery standards",
+      flow3: "Provide quote and production timeline",
+      flow4: "Create tests or phase-based visuals",
+      flow5: "Revise, unify, and deliver final files",
     },
   },
 };
@@ -219,6 +296,7 @@ function renderProjects() {
         </div>
         <h3>${localize(project.title)}</h3>
         ${project.client ? `<p class="project-role">${localize(project.role)}</p>` : ""}
+        ${renderProjectCapability(project)}
         <p>${localize(project.summary)}</p>
         ${renderProjectNote(project)}
         <div class="project-actions">
@@ -237,6 +315,16 @@ function renderProjects() {
       openProject(project);
     });
   });
+}
+
+function renderProjectCapability(project) {
+  const note = projectCapabilityNotes[state.lang][project?.caseClass] || projectCapabilityNotes[state.lang].default;
+  return `
+    <div class="project-capability">
+      <span>${note.label}</span>
+      <p>${note.body}</p>
+    </div>
+  `;
 }
 
 function getProjectCardClass(project, position) {

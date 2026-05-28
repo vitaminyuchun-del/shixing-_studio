@@ -14,32 +14,32 @@
   "capabilities": [
     {
       "title": {
-        "zh": "商业影像合成",
-        "en": "Commercial Compositing"
+        "zh": "01 商业影像后期支持",
+        "en": "01 Commercial Image Post Support"
       },
       "description": {
-        "zh": "实拍修补、画面瑕疵擦除、光影统一、素材整合、商业成片质感控制。",
-        "en": "Live-action cleanup, visual imperfection removal, lighting continuity, asset integration, and commercial finishing quality control."
+        "zh": "实拍合成 / 瑕疵修复 / 穿帮擦除 / 镜头补充 / 成片统一",
+        "en": "Live-action compositing / cleanup / continuity repair / shot support / finishing unification"
       }
     },
     {
       "title": {
-        "zh": "动画包装与动态视觉",
-        "en": "Motion Packaging & Dynamic Visuals"
+        "zh": "02 动画包装与视觉设计",
+        "en": "02 Motion Packaging & Visual Design"
       },
       "description": {
-        "zh": "片头片尾、字幕包装、转场系统、品牌动态视觉、栏目/内容包装。",
-        "en": "Openings and endings, subtitle packaging, transition systems, brand motion identity, and program/content packaging."
+        "zh": "标题包装 / 图形动效 / 信息视觉化 / 发布会视觉 / 品牌内容包装",
+        "en": "Title packaging / graphic motion / information visualization / launch-event visuals / brand content packaging"
       }
     },
     {
       "title": {
-        "zh": "AIGC视觉增强",
-        "en": "AIGC Visual Enhancement"
+        "zh": "03 AIGC视觉增强",
+        "en": "03 AIGC Visual Enhancement"
       },
       "description": {
-        "zh": "将AI生成素材、三维素材与实拍素材结合，通过合成、调色、修复和包装转化为可交付影像。",
-        "en": "Combining AI-generated, 3D, and live-action assets, then turning them into deliverable images through compositing, grading, repair, and motion packaging."
+        "zh": "AI素材修复 / 画面质感统一 / 镜头风格测试 / 概念影像开发 / 导演样片支持",
+        "en": "AI material repair / image-quality unification / shot-style testing / concept image development / director sample support"
       }
     }
   ],
