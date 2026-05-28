@@ -78,6 +78,39 @@ const projectCapabilityNotes = {
   },
 };
 
+const fallbackCapabilities = [
+  {
+    title: {
+      zh: "01 商业影像后期支持",
+      en: "01 Commercial Image Post Support",
+    },
+    description: {
+      zh: "实拍合成 / 瑕疵修复 / 穿帮擦除 / 镜头补充 / 成片统一",
+      en: "Live-action compositing / cleanup / continuity repair / shot support / finishing unification",
+    },
+  },
+  {
+    title: {
+      zh: "02 动画包装与视觉设计",
+      en: "02 Motion Packaging & Visual Design",
+    },
+    description: {
+      zh: "标题包装 / 图形动效 / 信息视觉化 / 发布会视觉 / 品牌内容包装",
+      en: "Title packaging / graphic motion / information visualization / launch-event visuals / brand content packaging",
+    },
+  },
+  {
+    title: {
+      zh: "03 AIGC视觉增强",
+      en: "03 AIGC Visual Enhancement",
+    },
+    description: {
+      zh: "AI素材修复 / 画面质感统一 / 镜头风格测试 / 概念影像开发 / 导演样片支持",
+      en: "AI material repair / image-quality unification / shot-style testing / concept image development / director sample support",
+    },
+  },
+];
+
 let revealObserver = null;
 
 const i18n = {
@@ -272,7 +305,8 @@ function renderCapabilities() {
   const grid = document.querySelector("[data-capabilities]");
   if (!grid) return;
 
-  grid.innerHTML = state.content.capabilities.map((item) => `
+  const capabilities = state.content?.capabilities?.length ? state.content.capabilities : fallbackCapabilities;
+  grid.innerHTML = capabilities.map((item) => `
     <article class="capability-item">
       <div class="capability-icon" aria-hidden="true"><span></span></div>
       <h3>${localize(item.title)}</h3>
