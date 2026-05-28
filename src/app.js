@@ -120,7 +120,7 @@ const i18n = {
       kicker: "TYC / 十行文化",
       title: "商业影像合成与 AIGC 视觉增强设计师",
       subtitle: "Motion Compositing / AIGC Visual Enhancement / Director-oriented Creator",
-      lede: "为广告片、游戏PV、品牌影像与AI短片提供画面合成、瑕疵修复、动画包装、AIGC画面优化与成片质感统一。",
+      lede: "为广告片、游戏PV、品牌影像与AI短片提供画面合成、瑕疵修复、动画包装、AIGC画面优化及成片质感统一。",
       ctaPrimary: "联系合作",
       ctaSecondary: "查看项目",
       reelLabel: "Featured Motion Reel",
